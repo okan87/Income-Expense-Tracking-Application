@@ -77,13 +77,13 @@ expenseBody.addEventListener("click", (e) => {
 
 //! Remove All
 clearButon.addEventListener("click", () => {
-  if(confirm("Are you sure you want to delete?")){
+  if (confirm("Are you sure you want to delete?")) {
     incomes = 0;
     expenseList = [];
     localStorage.clear();
     expenseBody.innerHTML = ``;
     calculateAndUpdate();
-    }
+  }
 });
 
 //!Functions

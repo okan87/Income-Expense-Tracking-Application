@@ -19,12 +19,17 @@ const expenseBody = document.getElementById("expense-body")
 const yourIncome = document.getElementById("your-income");
 const yourExpense = document.getElementById("your-expense");
 const yourResult = document.getElementById("result");
+
+
+
 //!Variables
 //*income
 let incomes = 0;
 let expenseList = []
 
 //!Events
+
+//! Window Load 
 window.addEventListener("load", () => {
   incomes = Number(localStorage.getItem("incomes"));
   dateInput.valueAsDate = new Date()
@@ -34,6 +39,7 @@ window.addEventListener("load", () => {
   calculateAndUpdate();
 });
 
+//! Add 
 addForm.addEventListener("submit", (e) => {
   e.preventDefault();
   incomes = Number(incomes) + Number(incomeInput.value);
@@ -43,6 +49,7 @@ addForm.addEventListener("submit", (e) => {
   calculateAndUpdate();
 });
 
+//! Expense 
 expenseForm.addEventListener("submit", (e) => {
   e.preventDefault()
   const newExpense = {
@@ -58,6 +65,20 @@ expenseForm.addEventListener("submit", (e) => {
   expenseForm.reset()
   dateInput.valueAsDate = new Date()
 })
+
+//! Remove 
+expenseBody.addEventListener("click", (e)=>{
+if(e.target.classList.contains("fa-trash-can")){
+  e.target.parentElement.parentElement.remove()
+  const id = e.target.id
+  //?Related object is deleted
+  expenseList = expenseList.filter((expense)=>expense.id !=id)
+  //?Deleted object was sent to localStorage
+  localStorage.setItem("expenses", JSON.stringify(expenseList))
+}
+})
+
+
 //!Functions
 const calculateAndUpdate = () => {
   yourIncome.innerText = incomes;

@@ -27,3 +27,11 @@ This project is a simple web application that allows you to track your income an
 - **LocalStorage Usage:** Income information is saved in local storage, so data is preserved even when the page is refreshed.
 - **Dynamic DOM Manipulation:** The expense list and results are updated dynamically with JavaScript.
 - **Event Listeners:** The application responds to form submissions and button clicks using various event listeners.
+
+## Preview
+
+![Project Preview](projectImg.png)
+
+## Demo
+
+You can view the live demo of the project here: [Live Demo](https://okan87.github.io/Income-Expense-Tracking-Application/)

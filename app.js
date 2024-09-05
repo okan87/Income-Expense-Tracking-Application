@@ -3,7 +3,7 @@
 //*Income Selectors
 const addForm = document.getElementById("add-form");
 const incomeInput = document.getElementById("income-input");
-const addButon = document.getElementById("add*btn");
+const addButon = document.getElementById("add-btn");
 
 //*Expenses Selectors
 const expenseForm = document.getElementById("expense-form");
